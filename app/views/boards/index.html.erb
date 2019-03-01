@@ -1,0 +1,26 @@
+<h1 class="ui header">Current Boards</h1>
+<hr />
+
+<div class="ui grid">
+  <div class="six wide column">
+    <% @boards.each do |board| %>
+      <div class="ui card">
+        <div class="content">
+          <h3><%= board.name %></h3>
+            <div class="extra content">
+                <%= link_to "View", board_lists_path(board), class: "ui inverted blue button" %>
+                <%= link_to "Edit", edit_board_path(board), class: "ui inverted green button" %>
+                <%= link_to "Delete", (board), method: :delete, class: "ui inverted red button" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+
+
+
+
+
+

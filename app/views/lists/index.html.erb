@@ -1,0 +1,19 @@
+<h1 class="ui header">Lists</h1>
+<%= link_to 'Add List', new_board_list_path(@board)	 %> 
+<hr />
+<div class="ui three column grid">
+  <div class="six wide column">
+    <% @lists.each do |list| %>
+      <div class="ui card">
+        <div class="content">
+              <h3><%= list.name %></h3>
+            <div class="extra content">
+                <%= link_to "View", list_tasks_path(list), class: "ui inverted blue button" %>
+                <%= link_to "Edit", edit_board_list_path(@board, list), class: "ui inverted green button" %>
+                <%= link_to "Delete", board_list_path(@board, list), method: :delete, class: "ui inverted red button" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
