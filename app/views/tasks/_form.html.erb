@@ -1,0 +1,6 @@
+<%= form_with(model: [@list, @task], local: true, class: "ui form") do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.submit nil, class: "ui button" %>
+<% end %>

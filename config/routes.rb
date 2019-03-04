@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root "boards#index"
   
-  devise_for :users
+  devise_for :users do
   resources :boards
+  end
 
   resources :boards do
     resources :lists    

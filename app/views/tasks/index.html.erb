@@ -1,2 +1,18 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1 class="ui header">Tasks</h1>
+<%= link_to 'Add task', new_list_task_path(@list)	 %> 
+<hr />
+<div class="ui three column grid">
+  <div class="six wide column">
+    <% @tasks.each do |task| %>
+      <div class="ui card">
+        <div class="content">
+              <h3><%= task.name %></h3>
+            <div class="extra content">
+                <%= link_to "Edit", edit_list_task_path(@list, task), class: "ui inverted green button" %>
+                <%= link_to "Delete", list_task_path(@list, task), method: :delete, class: "ui inverted red button" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
