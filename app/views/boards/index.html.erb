@@ -1,17 +1,18 @@
 <h1 class="ui center aligned icon header">Current Boards</h1>
 <hr />
 
-<div class="ui center aligned cards">
-    <% @boards.each do |board| %>
-      <div class="ui card">
-        <div class="content">
+    <div class="ui grid">
+      <div class= "five wide column" >
+        <% @boards.each do |board| %>
+        <div class="ui card">
           <h3><%= board.name %></h3>
             <div class="extra content">
+              <div class= "ui three buttons">
                 <%= link_to "View", board_lists_path(board), class: "ui inverted blue button" %>
                 <%= link_to "Edit", edit_board_path(board), class: "ui inverted green button" %>
                 <%= link_to "Delete", (board), method: :delete, class: "ui inverted red button" %>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

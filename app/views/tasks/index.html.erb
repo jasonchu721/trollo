@@ -1,18 +1,21 @@
-<h1 class="ui header">Tasks</h1>
-<%= link_to 'Add task', new_list_task_path(@list)	 %> 
+<h1 class="ui center aligned icon header">Tasks</h1>
+<%= link_to 'Add task', new_list_task_path(@list)	%>
 <hr />
-<div class="ui three column grid">
-  <div class="six wide column">
-    <% @tasks.each do |task| %>
+
+<% @tasks.each do |task| %>
+  <div class="ui grid">
+    <div class="five wide column">
       <div class="ui card">
-        <div class="content">
-              <h3><%= task.name %></h3>
+        <h3><%= task.name %></h3>
+          <div class="content">
             <div class="extra content">
+              <div class= "ui two buttons">
                 <%= link_to "Edit", edit_list_task_path(@list, task), class: "ui inverted green button" %>
                 <%= link_to "Delete", list_task_path(@list, task), method: :delete, class: "ui inverted red button" %>
+              </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
+  </div>
 <% end %>

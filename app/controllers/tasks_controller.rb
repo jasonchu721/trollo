@@ -21,7 +21,7 @@ class TasksController < ApplicationController
   def create
     @task = @list.tasks.new(task_params)
     if @task.save
-      redirect_to board_list_path(@list.board_id, @list)
+      redirect_to [@list, @task]
     else
       render :new
     end
